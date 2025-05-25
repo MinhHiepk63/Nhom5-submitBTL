@@ -3,13 +3,13 @@
 #include <vector>
 using namespace std;
 
-// Module Ngân Quỹ
+
 class Budget {
 private:
     double totalAmount;
     double expenses;
     double income;
-    vector<Payment> history; // lưu lịch sử giao dịch
+    vector<Payment> history;
 
 public:
     Budget(double amount) : totalAmount(amount), expenses(0), income(0) {}
@@ -30,17 +30,3 @@ public:
 
     void displayHistory();
 };
-
-// Định nghĩa các hàm của Budget liên quan đến lịch sử
-void Budget::addTransaction(const Payment& payment) {
-    history.push_back(payment);
-}
-
-void Budget::displayHistory() {
-    cout << "\n=== Payment History ===\n";
-    for (const auto& payment : history) {
-        payment.displayInfo();
-        cout << "-------------------\n";
-    }
-}
-
